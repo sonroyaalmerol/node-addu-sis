@@ -1,0 +1,20 @@
+{
+  "name": "node-addu-sis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "A node.js API for accessing AdDU SIS data.",
+  "repository": "https://github.com/sonroyaalmerol/node-addu-sis",
+  "author": "Son Roy Almerol",
+  "dependencies": {
+    "async-polling": "^0.2.1",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "http": "0.0.1-security",
+    "https": "^1.0.0",
+    "jsdom": "^16.2.2",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^3.0.0",
+    "tabletojson": "^2.0.4"
+  }
+}
