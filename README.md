@@ -23,7 +23,7 @@ Here is an example that:
 3. gets and prints user information
 
 ```
-const SIS = require('./index')
+const SIS = require('node-addu-sis')
 
 const sis = new SIS() // initialize
 await sis.init() // initialize
@@ -32,7 +32,7 @@ await sis.login(process.env.USERNAME, process.env.PASSWORD) // authenticate
 var user = await sis.getUser() // gets user from sis
   
 console.log({
-card: user.card,
+  card: user.card,
   id: user.id,
   name: user.name,
   course: user.course,
