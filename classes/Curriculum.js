@@ -19,7 +19,7 @@ class Curriculum {
     }
   }
 
-  get clean() {
+  getArray() {
     return this._clean
   }
 

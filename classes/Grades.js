@@ -19,7 +19,7 @@ class Grades {
     this._qpi = this._raw[this._raw.length-1]['FINAL']
   }
 
-  get clean() {
+  getArray() {
     return this._clean
   }
 

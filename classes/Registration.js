@@ -16,7 +16,7 @@ class Registration {
     }
   }
 
-  get clean() {
+  getArray() {
     return this._clean
   }
 

@@ -3,6 +3,9 @@
 
   // PRINTS USER INFO AND ALL GRADES
 
+  // TODO: find method for curriculum, grades, registrations
+  // TODO: prereq module for curriculum
+
   require('dotenv').config()
 
   const puppeteer = require('puppeteer')
@@ -59,15 +62,13 @@
 
   Object.keys(grades).forEach(yearKey => {
     Object.keys(grades[yearKey]).forEach(semKey => {
-      console.log(grades[yearKey][semKey].clean)
+      console.log(grades[yearKey][semKey].getArray())
     })
   })
 
-  console.log(balance.clean)
-
-  console.log(registration.clean)
-
-  console.log(curriculum.clean)
+  console.log(balance.terms)
+  console.log(registration.getArray())
+  console.log(curriculum.getArray())
 
   await sis.close()
   browser.close()
