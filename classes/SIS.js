@@ -1,8 +1,11 @@
 const axios = require('axios')
+const polling = require('async-polling')
 
 const User = require('./User')
 const Grades = require('./Grades')
-const polling = require('async-polling')
+const Balance = require('./Balance')
+const Registration = require('./Registration')
+const Curriculum = require('./Curriculum')
 
 class SIS {
   constructor(username, password) {
@@ -90,6 +93,33 @@ class SIS {
     }))
 
     return grades
+  }
+
+  async getBalance() {
+    var balancePage = await axios.get(`${this.url}/balance`, { 
+      headers: {
+        Cookie: this.cookies
+      }
+    })
+    return new Balance(balancePage.data)
+  }
+
+  async getRegistration() {
+    var registrationPage = await axios.get(`${this.url}/registration`, {
+      headers: {
+        Cookie: this.cookies
+      }
+    })
+    return new Registration(registrationPage.data)
+  }
+
+  async getCurriculum() {
+    var curriculumPage = await axios.get(`${this.url}/curriculum`, {
+      headers: {
+        Cookie: this.cookies
+      }
+    })
+    return new Curriculum(curriculumPage.data)
   }
 
   close() {

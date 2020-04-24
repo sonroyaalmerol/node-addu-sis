@@ -31,7 +31,20 @@
 
   const sis = new SIS(process.env.USERNAME, process.env.PASSWORD)
   await sis.init(browser)
-  var user = await sis.getUser()
+
+  var res = await Promise.all([
+    sis.getUser(),
+    sis.getGrades(),
+    sis.getBalance(),
+    sis.getRegistration(),
+    sis.getCurriculum()
+  ])
+
+  var user = res[0]
+  var grades = res[1]
+  var balance = res[2]
+  var registration = res[3]
+  var curriculum = res[4]
   
   console.log({
     card: user.card,
@@ -44,13 +57,17 @@
     status: user.status
   })
 
-  var grades = await sis.getGrades()
-
   Object.keys(grades).forEach(yearKey => {
     Object.keys(grades[yearKey]).forEach(semKey => {
       console.log(grades[yearKey][semKey].clean)
     })
   })
+
+  console.log(balance.clean)
+
+  console.log(registration.clean)
+
+  console.log(curriculum.clean)
 
   await sis.close()
   browser.close()
