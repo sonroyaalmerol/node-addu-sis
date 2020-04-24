@@ -1,5 +1,7 @@
 node_modules/
 chromeData/
 .env
+
 .vscode/
+
 package-lock.json

@@ -1,0 +1,109 @@
+# AdDU Student Information System Node.js Library
+
+A node.js API for accessing AdDU Student Information System (SIS) data. This library scrapes data using puppeteer and axios with jsdom as HTML parser. No data is saved when using this library by itself.
+
+## Getting Started
+
+These instructions will get you the library up and running on your local machine for development and testing purposes
+
+### Installing
+
+How to install the library to your existing Node.js project
+
+```
+npm i node-addu-sis // for npm users
+yarn add node-addu-sis // for yarn users
+```
+
+### Usage
+
+Here is an example that:
+1. initializes the SIS library (required)
+2. authenticates using an AdDU SIS account (required)
+3. gets and prints user information
+
+```
+const SIS = require('./index')
+
+const sis = new SIS() // initialize
+await sis.init() // initialize
+await sis.login(process.env.USERNAME, process.env.PASSWORD) // authenticate
+
+var user = await sis.getUser() // gets user from sis
+  
+console.log({
+card: user.card,
+  id: user.id,
+  name: user.name,
+  course: user.course,
+  section: user.section,
+  division: user.division,
+  year: user.year,
+  status: user.status
+})
+```
+
+Getting and printing the grades of the account
+
+```
+var grades = await sis.getGrades()
+
+Object.keys(grades).forEach(yearKey => {
+  Object.keys(grades[yearKey]).forEach(semKey => {
+    console.log(grades[yearKey][semKey].all())
+  })
+})
+
+```
+
+Getting and printing the balance of the account per term
+
+```
+var balance = await sis.getBalance()
+
+console.log(balance.terms)
+
+```
+
+Getting and printing the registration of the account
+
+```
+var registration = await sis.getRegistration()
+
+console.log(registration.all())
+
+```
+
+Getting and printing all of the subjects in the curriculum of the account
+
+```
+var curriculum = await sis.getCurriculum()
+
+console.log(curriculum.all())
+
+```
+
+## Testing
+
+This package does not come with examples for testing yet.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/sonroyaalmerol/node-addu-sis/tags). 
+
+## Authors
+
+* **Son Roy Almerol** - *Initial work* - [sonroyaalmerol](https://github.com/sonroyaalmerol)
+
+See also the list of [contributors](https://github.com/sonroyaalmerol/node-addu-sis/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* AdDU SIS ;)
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
