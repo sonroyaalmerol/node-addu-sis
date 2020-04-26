@@ -9,7 +9,7 @@
 
   const SIS = require('./index')
 
-  const sis = new SIS()
+  const sis = new SIS({ cache: true })
   await sis.init()
   await sis.login(process.env.USERNAME, process.env.PASSWORD)
 
@@ -48,9 +48,11 @@
   console.log(registration.all())
   console.log(curriculum.all()) */
 
-  var curriculum = await sis.getCurriculum()
-
-  console.log(curriculum.filter({ yearLevel: '1st Yr.' }))
+  console.log((await sis.getGrades()).all())
+  console.log((await sis.getBalance()).all())
+  console.log((await sis.getCurriculum()).all())
+  console.log((await sis.getRegistration()).all())
+  console.log((await sis.searchClass('4-%')))
   
   await sis.close()
 

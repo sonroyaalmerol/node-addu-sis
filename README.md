@@ -25,7 +25,7 @@ Here is an example that:
 ```
 const SIS = require('node-addu-sis')
 
-const sis = new SIS() // initialize
+const sis = new SIS({ cache: true }) // initialize
 await sis.init() // initialize
 await sis.login(process.env.USERNAME, process.env.PASSWORD) // authenticate
 
@@ -48,20 +48,16 @@ Getting and printing the grades of the account
 ```
 var grades = await sis.getGrades()
 
-Object.keys(grades).forEach(yearKey => {
-  Object.keys(grades[yearKey]).forEach(semKey => {
-    console.log(grades[yearKey][semKey].all())
-  })
-})
+console.log(grades.all())
 
 ```
 
-Getting and printing the balance of the account per term
+Getting and printing the balance of the account
 
 ```
 var balance = await sis.getBalance()
 
-console.log(balance.terms)
+console.log(balance.all())
 
 ```
 
@@ -80,6 +76,15 @@ Getting and printing all of the subjects in the curriculum of the account
 var curriculum = await sis.getCurriculum()
 
 console.log(curriculum.all())
+
+```
+
+Searching for currently available classes with class code 4-%
+
+```
+var search = await sis.searchClasses('4-%')
+
+console.log(search)
 
 ```
 
