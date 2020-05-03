@@ -24,7 +24,7 @@ Here is an example that:
 ```
 const SIS = require('node-addu-sis')
 
-const sis = new SIS(process.env.USERNAME, process.env.PASSWORD, { cache: true }) // initialize
+const sis = new SIS(process.env.USERNAME, process.env.PASSWORD) // initialize
 
 var user = await sis.getUser() // gets user from sis
   
