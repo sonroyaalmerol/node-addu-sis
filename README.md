@@ -1,6 +1,6 @@
 # AdDU Student Information System Node.js Library
 
-A node.js API for accessing AdDU Student Information System (SIS) data. This library scrapes data using puppeteer and axios with jsdom as HTML parser. No data is saved when using this library by itself.
+A node.js API for accessing AdDU Student Information System (SIS) data. This library scrapes data using axios with jsdom as HTML parser. No data is saved when using this library by itself.
 
 ## Getting Started
 
@@ -26,7 +26,6 @@ Here is an example that:
 const SIS = require('node-addu-sis')
 
 const sis = new SIS({ cache: true, url: 'https://sis2.addu.edu.ph' }) // initialize
-await sis.init() // initialize
 await sis.login(process.env.USERNAME, process.env.PASSWORD) // authenticate
 
 var user = await sis.getUser() // gets user from sis

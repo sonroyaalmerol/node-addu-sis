@@ -10,7 +10,6 @@
   const SIS = require('./index')
 
   const sis = new SIS({ cache: true })
-  await sis.init()
   await sis.login(process.env.USERNAME, process.env.PASSWORD)
 
   /* var res = await Promise.all([
@@ -53,6 +52,6 @@
   console.log((await sis.getCurriculum()).all())
   console.log((await sis.getRegistration()).all())
   
-  await sis.close()
+  //await sis.close()
 
 })()
