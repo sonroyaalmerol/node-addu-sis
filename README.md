@@ -18,15 +18,13 @@ yarn add node-addu-sis // for yarn users
 ### Usage
 
 Here is an example that:
-1. initializes the SIS library (required)
-2. authenticates using an AdDU SIS account (required)
-3. gets and prints user information
+1. initializes the SIS library
+2. gets and prints user information
 
 ```
 const SIS = require('node-addu-sis')
 
-const sis = new SIS({ cache: true, url: 'https://sis2.addu.edu.ph' }) // initialize
-await sis.login(process.env.USERNAME, process.env.PASSWORD) // authenticate
+const sis = new SIS(process.env.USERNAME, process.env.PASSWORD, { cache: true }) // initialize
 
 var user = await sis.getUser() // gets user from sis
   
