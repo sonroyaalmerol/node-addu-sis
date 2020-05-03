@@ -52,7 +52,6 @@
   console.log((await sis.getBalance()).all())
   console.log((await sis.getCurriculum()).all())
   console.log((await sis.getRegistration()).all())
-  console.log((await sis.searchClass('4-%')))
   
   await sis.close()
 

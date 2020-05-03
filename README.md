@@ -25,7 +25,7 @@ Here is an example that:
 ```
 const SIS = require('node-addu-sis')
 
-const sis = new SIS({ cache: true }) // initialize
+const sis = new SIS({ cache: true, url: 'https://sis2.addu.edu.ph' }) // initialize
 await sis.init() // initialize
 await sis.login(process.env.USERNAME, process.env.PASSWORD) // authenticate
 
