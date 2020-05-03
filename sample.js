@@ -9,7 +9,7 @@
 
   const SIS = require('./index')
 
-  const sis = new SIS(process.env.USERNAME, process.env.PASSWORD, { cache: true })
+  const sis = new SIS(process.env.USERNAME, process.env.PASSWORD)
 
   var res = await Promise.all([
     sis.getUser(),
