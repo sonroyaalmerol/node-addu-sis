@@ -81,7 +81,7 @@ Searching for currently available classes with class code 4-%
 ```
 var search = await sis.searchClasses('4-%')
 
-console.log(search)
+console.log(search.all())
 
 ```
 
