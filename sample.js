@@ -16,7 +16,8 @@
     sis.getGrades(),
     sis.getBalance(),
     sis.getRegistration(),
-    sis.getCurriculum()
+    sis.getCurriculum(),
+    sis.searchClass('4-%')
   ])
 
   var user = res[0]
@@ -24,11 +25,13 @@
   var balance = res[2]
   var registration = res[3]
   var curriculum = res[4]
+  var search = res[5]
 
   console.log(user.all())
   console.log(grades.all())
   console.log(balance.all())
   console.log(registration.all())
   console.log(curriculum.all())
+  console.log(search.all())
 
 })()
