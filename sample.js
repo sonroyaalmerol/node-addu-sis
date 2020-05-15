@@ -17,7 +17,7 @@
     sis.getBalance(),
     sis.getRegistration(),
     sis.getCurriculum(),
-    sis.searchClass('4-%')
+    sis.searchClassOfferings('4-%')
   ])
 
   var user = res[0]
@@ -33,5 +33,4 @@
   console.log(registration.all())
   console.log(curriculum.all())
   console.log(search.all())
-
 })()

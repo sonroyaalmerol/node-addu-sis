@@ -38,6 +38,7 @@ console.log({
   year: user.year,
   status: user.status
 })
+
 ```
 
 Getting and printing the grades of the account
@@ -79,9 +80,38 @@ console.log(curriculum.all())
 Searching for currently available classes with class code 4-%
 
 ```
-var search = await sis.searchClasses('4-%')
+var search = await sis.searchClassOfferings('4-%')
 
 console.log(search.all())
+
+```
+
+Getting and printing all currently preregistered subjects
+
+```
+var prereg = await sis.getPrereg()
+
+console.log(prereg.all())
+
+```
+
+Searching for subjects to preregister using the keywords "PE" and adding the first subject found
+
+```
+var search = await sis.searchPrereg('PE')
+var firstSubjectFound = search.response.all()[0]
+
+console.log(await sis.addPrereg(firstSubjectFound.code, search.session))
+
+```
+
+Getting currently preregistered subjects and dropping first subject found
+
+```
+var prereg = await sis.getPrereg()
+var firstSubjectFound = prereg.all()[0]
+
+console.log(await sis.dropPrereg(firstSubjectFound.id))
 
 ```
 
