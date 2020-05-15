@@ -32,5 +32,8 @@
   console.log(balance.all())
   console.log(registration.all())
   console.log(curriculum.all())
-  console.log(search.all())
+  console.log(search.all()) 
+  
+  var prereg = await sis.getPrereg()
+  console.log(prereg.find({ name: 'CS 2136' }))
 })()
