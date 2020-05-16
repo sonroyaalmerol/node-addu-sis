@@ -11,7 +11,7 @@
 
   const sis = new SIS(process.env.USERNAME, process.env.PASSWORD)
 
-  /* var res = await Promise.all([
+  var res = await Promise.all([
     sis.getUser(),
     sis.getGrades(),
     sis.getBalance(),
@@ -32,10 +32,10 @@
   console.log(balance.all())
   console.log(registration.all())
   console.log(curriculum.all())
-  console.log(search.all()) */
+  console.log(search.all())
 
-  var prereg = await sis.getPrereg()
-  console.log(prereg.all())
+  //var prereg = await sis.getUser()
+  //console.log(prereg.all())
 
   /* const nodeFetch = require('node-fetch')
   const fetch = require('fetch-cookie/node-fetch')(nodeFetch)
