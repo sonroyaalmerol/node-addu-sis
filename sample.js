@@ -11,7 +11,16 @@
 
   const sis = new SIS(process.env.USERNAME, process.env.PASSWORD)
 
-  var isValid = await sis.checkAuth()
+  var res = await Promise.all([
+    //sis.getBalance(),
+    //sis.getCurriculum(),
+    //sis.getGrades(),
+    //sis.getPrereg(),
+    sis.getRegistration(),
+    sis.getUser()
+  ])
 
-  console.log(isValid)
+  for (var i=0; i < res.length; i++) {
+    console.log(res[i].all())
+  }
 })()
