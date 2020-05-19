@@ -1,6 +1,6 @@
 {
   "name": "node-addu-sis",
-  "version": "1.7.8",
+  "version": "1.7.9",
   "main": "index.js",
   "license": "MIT",
   "description": "A node.js API for accessing AdDU SIS data.",

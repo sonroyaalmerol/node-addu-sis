@@ -11,7 +11,8 @@
 
   const sis = new SIS(process.env.USERNAME, process.env.PASSWORD)
 
-  var res = await Promise.all([
+  console.log(await sis.checkAuth())
+  /* var res = await Promise.all([
     //sis.getBalance(),
     //sis.getCurriculum(),
     //sis.getGrades(),
@@ -22,5 +23,5 @@
 
   for (var i=0; i < res.length; i++) {
     console.log(res[i].all())
-  }
+  } */
 })()
