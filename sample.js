@@ -14,11 +14,11 @@
   //console.log(await sis.checkAuth())
   var res = await Promise.all([
     sis.getBalance(),
-    sis.getCurriculum(),
-    sis.getGrades(),
-    sis.getPrereg(),
-    sis.getRegistration(),
-    sis.getUser()
+    //sis.getCurriculum(),
+    //sis.getGrades(),
+    //sis.getPrereg(),
+    //sis.getRegistration(),
+    //sis.getUser()
   ])
 
   for (var i=0; i < res.length; i++) {
