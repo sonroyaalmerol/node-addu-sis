@@ -10,7 +10,7 @@
   const SIS = require('./index')
   const sis = new SIS(process.env.USERNAME, process.env.PASSWORD)
 
-  var res = await sis.getBalance()
+  var res = await sis.getUser()
   console.log(res.all())
   //console.log(await sis.checkAuth())
   /*var res = await Promise.all([
