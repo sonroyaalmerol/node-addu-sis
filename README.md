@@ -26,7 +26,7 @@ const SIS = require('node-addu-sis')
 
 const sis = new SIS(process.env.USERNAME, process.env.PASSWORD) // initialize
 
-var user = await sis.getUser() // gets user from sis
+var user = (await sis.getRegistration()).user // gets user from sis
   
 console.log({
   card: user.card,
