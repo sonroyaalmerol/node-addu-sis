@@ -8,10 +8,10 @@
   require('dotenv').config()
 
   const SIS = require('./index')
-  const sis = new SIS(process.env.USERNAME, process.env.PASSWORD)
+  const sis = new SIS(process.env.SIS_USERNAME, process.env.SIS_PASSWORD)
 
   var res = await sis.getRegistration()
-  console.log(res.user.all())
+  console.log(res.subjects.all())
   //console.log(await sis.checkAuth())
   /*var res = await Promise.all([
     sis.getBalance(),

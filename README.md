@@ -6,7 +6,7 @@ A node.js API for accessing AdDU Student Information System (SIS) data. This lib
 
 These instructions will get you the library up and running on your local machine for development and testing purposes
 
-### Installing
+### Installing (as a library)
 
 How to install the library to your existing Node.js project
 
@@ -15,7 +15,16 @@ npm i node-addu-sis // for npm users
 yarn add node-addu-sis // for yarn users
 ```
 
-### Usage
+### Usage (as a REST API server)
+
+```
+npm i // for npm users
+yarn // for yarn users
+
+node server.js
+```
+
+### Usage (as a library)
 
 Here is an example that:
 1. initializes the SIS library

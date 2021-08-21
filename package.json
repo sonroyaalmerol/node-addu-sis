@@ -7,11 +7,15 @@
   "repository": "https://github.com/sonroyaalmerol/node-addu-sis",
   "author": "Son Roy Almerol",
   "dependencies": {
+    "fastify": "^3.20.2",
+    "fastify-auth": "^1.1.0",
+    "fastify-basic-auth": "^2.1.0",
+    "fastify-cors": "^6.0.2",
     "html-table-to-json": "git+https://github.com/sonroyaalmerol/html-table-to-json.git",
     "jsdom-jscore-rn": "git+https://github.com/iamcco/jsdom-jscore-rn.git",
-    "node-fetch": "^2.6.0",
-    "parse-domain": "^3.0.2",
-    "querystring": "^0.2.0"
+    "node-fetch": "^2.6.1",
+    "parse-domain": "^3.0.3",
+    "querystring": "^0.2.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
